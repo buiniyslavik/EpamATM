@@ -29,6 +29,8 @@ namespace epamATM
                 PinForm pinForm = new PinForm();
                 dialogResult = pinForm.ShowDialog();
                 currentClient = clientRepository.GetClientByPin(pinForm.pin);
+                if(currentClient == null)
+                    MessageBox.Show("пошел нахуй");
             }
             if (currentClient == null)
                 Close();
