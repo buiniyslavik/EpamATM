@@ -30,6 +30,8 @@ namespace epamATM
                 dialogResult = pinForm.ShowDialog();
                 currentClient = clientRepository.GetClientByPin(pinForm.pin);
             }
+            if (currentClient == null)
+                Close();
         }
     }
 
