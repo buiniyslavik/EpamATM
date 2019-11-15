@@ -44,6 +44,7 @@
             this.entryBox.Size = new System.Drawing.Size(146, 20);
             this.entryBox.TabIndex = 0;
             this.entryBox.Validating += new System.ComponentModel.CancelEventHandler(this.entryBox_Validating);
+            this.entryBox.Validated += new System.EventHandler(this.entryBox_Validated);
             // 
             // label1
             // 
@@ -63,6 +64,7 @@
             this.btnOK.TabIndex = 2;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 

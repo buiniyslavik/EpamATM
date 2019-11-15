@@ -6,6 +6,7 @@ namespace epamATM
 {
     public partial class PinForm : Form
     {
+        public string pin { get; private set; }
         public PinForm()
         {
             InitializeComponent();
@@ -34,6 +35,16 @@ namespace epamATM
                 e.Cancel = false;
                 errorProvider1.SetError(entryBox, string.Empty);
             }
+        }
+
+        private void entryBox_Validated(object sender, EventArgs e)
+        {
+            pin = entryBox.Text;
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
