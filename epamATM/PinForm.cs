@@ -44,7 +44,10 @@ namespace epamATM
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-
+            if (ValidateChildren())
+                DialogResult = DialogResult.OK;
+            else
+                DialogResult = DialogResult.None;
         }
     }
 }

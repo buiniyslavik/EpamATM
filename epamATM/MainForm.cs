@@ -12,14 +12,24 @@ namespace epamATM
 {
     public partial class MainForm : Form
     {
+        private ClientRepository clientRepository;
+        private Client currentClient;
         public MainForm()
         {
             InitializeComponent();
+            currentClient = null;
+            clientRepository = new ClientRepository();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            DialogResult dialogResult = DialogResult.OK;
+            while (dialogResult == DialogResult.OK && currentClient == null)
+            {
+                PinForm pinForm = new PinForm();
+                dialogResult = pinForm.ShowDialog();
+                currentClient = clientRepository.GetClientByPin(pinForm.pin);
+            }
         }
     }
 
